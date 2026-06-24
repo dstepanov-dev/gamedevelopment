@@ -25,31 +25,34 @@ export function Contact(): JSX.Element {
         />
 
         <div className="mx-auto mt-14 grid max-w-5xl gap-5 lg:grid-cols-3">
-          <StaggerGroup className="grid gap-4 lg:col-span-1">
+          <StaggerGroup className="grid min-w-0 gap-4 lg:col-span-1">
             {INFO.map((item) => (
               <motion.div
                 key={item.label}
                 variants={staggerItem}
-                className="glass flex items-start gap-4 rounded-2xl p-5"
+                className="glass flex min-w-0 items-start gap-4 rounded-2xl p-5"
               >
                 <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand-light">
                   <InfoIcon name={item.icon} />
                 </span>
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="text-xs font-medium uppercase tracking-wider text-slate-500">{item.label}</p>
                   {'href' in item ? (
-                    <a href={item.href} className="mt-0.5 block break-words font-medium text-white transition-colors hover:text-brand-light">
+                    <a
+                      href={item.href}
+                      className="mt-0.5 block font-medium text-white transition-colors hover:text-brand-light [overflow-wrap:anywhere]"
+                    >
                       {item.value}
                     </a>
                   ) : (
-                    <p className="mt-0.5 break-words font-medium text-white">{item.value}</p>
+                    <p className="mt-0.5 font-medium text-white [overflow-wrap:anywhere]">{item.value}</p>
                   )}
                 </div>
               </motion.div>
             ))}
           </StaggerGroup>
 
-          <Reveal direction="up" delay={0.1} className="lg:col-span-2">
+          <Reveal direction="up" delay={0.1} className="min-w-0 lg:col-span-2">
             <div className="glass-strong relative flex h-full flex-col justify-center overflow-hidden rounded-3xl p-8 text-center sm:p-12">
               <span className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-brand/20 blur-3xl" />
               <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">Get a Quote</h3>
