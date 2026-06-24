@@ -76,11 +76,8 @@ export function Footer(): JSX.Element {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-7 text-center text-xs text-slate-500 sm:flex-row sm:text-left">
-          <p>
-            © {SITE.name}. All Rights Reserved.
-          </p>
-          <p>Premium redesign · Built with Next.js, Tailwind &amp; Framer Motion.</p>
+        <div className="mt-14 flex items-center justify-center border-t border-white/10 pt-7 text-center text-xs text-slate-500">
+          <p>© {SITE.name}. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
